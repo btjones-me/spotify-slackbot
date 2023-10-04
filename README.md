@@ -1,6 +1,6 @@
 # spotify-slackbot
 
-![Python Package](https://github.com/my org/spotify-slackbot/workflows/Python%20package/badge.svg)
+![Python Package](https://github.com/btjones-me/spotify-slackbot/workflows/Python%20package/badge.svg)
 
 Create spotify playlists from slack messages
 
@@ -14,7 +14,7 @@ Create spotify playlists from slack messages
 
 # Credits
 
-This package was created with Cookiecutter and the `my org/mw-pypackage-cookiecutter` project template.
+This package was created with Cookiecutter and the `btjones-me/pypackage-cookiecutter` project template.
 
 * Cookiecutter: https://github.com/cookiecutter/cookiecutter
-* my org/mw-pypackage-cookiecutter: https://github.com/my org/mw-pypackage-cookiecutter
+* btjones-me/pypackage-cookiecutter: https://github.com/btjones-me/pypackage-cookiecutter
