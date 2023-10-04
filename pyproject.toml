@@ -1,0 +1,68 @@
+[tool.poetry]
+name = "spotify-slackbot"
+version = "0.1.0"
+authors = [
+    "Ben <btjones.me@gmail.com>"
+]
+description = "Create spotify playlists from slack messages"
+license = "MIT license"
+keywords = [
+    "FIXME",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8"
+]
+
+homepage = "https://github.com/my org/spotify-slackbot"
+repository = "https://github.com/my org/spotify-slackbot"
+
+readme = "README.md"
+
+[[tool.poetry.source]]
+name = "pypi_"
+url = "https://pypi.org/simple/"
+
+#[[tool.poetry.source]]
+#name = "pypigetfeed"
+#url = ""
+#secondary = true
+
+# Do not manually edit, use poetry add/remove (--dev) to manage dependencies
+[tool.poetry.dependencies]
+python = "^3.11"
+slack-sdk = "^3.22.0"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.dev-dependencies]
+assertpy = "*"
+bandit = "*"
+black = "*"
+coverage = "*"
+flake8 = "*"
+isort = "*"
+liccheck = "*"
+mypy = "*"
+pytest-cov = "*"
+pytest-runner = "*"
+pytest = "*"
+tox-gh-actions = "*"
+tox = "*"
+toml = "*"
+keyring = "*"
+artifacts-keyring = "*"
+twine = "*"
+
+[tool.pytest.ini_options]
+addopts = "--cov=spotify_slackbot --cov-fail-under=95"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
