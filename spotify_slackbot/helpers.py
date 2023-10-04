@@ -39,19 +39,22 @@ def get_track_uris_from_album(album_id, headers):
     """Fetch all track URIs in an album."""
     track_uris = []
     response = requests.get(
-        f"https://api.spotify.com/v1/albums/{album_id}/tracks", headers=headers
+        f"https://api.spotify.com/v1/albums/{album_id}", headers=headers
     )
     response.raise_for_status()
     album_data = response.json()
-    for track in album_data["items"]:
+    for track in album_data["tracks"]["items"]:
         track_uris.append(track["uri"])
     return track_uris
 
 
 def add_tracks_to_playlist(track_uris, playlist_id, headers):
     """Add a list of track URIs to a Spotify playlist."""
-    requests.post(
-        f"https://api.spotify.com/v1/playlists/{playlist_id}/tracks",
-        headers=headers,
-        json={"uris": track_uris},
-    )
+    batch_size = 100  # Spotify's limit
+    for i in range(0, len(track_uris), batch_size):
+        batch = track_uris[i : i + batch_size]
+        a = requests.post(
+            f"https://api.spotify.com/v1/playlists/{playlist_id}/tracks",
+            headers=headers,
+            json={"uris": batch},
+        )
